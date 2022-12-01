@@ -4,14 +4,14 @@ module "vpc" {
 
   name = "my-demo-vpc"
 
-  vpc_id = "vpc-f3b85d98"
+  
   
 
   cidr = "10.0.0.0/16"
-  azs  = slice(data.aws_availability_zones.available.names, 0, 3)
+  azs = ["ap-south-1"]
 
   private_subnets = ["10.0.1.0/24"]
-  public_subnets  = ["subnet-9393e3df", "subnet-1daead75", "subnet-cf9a20b4"]
+  public_subnets  = ["10.0.101.0/24"]
 
   
   public_subnet_tags = {

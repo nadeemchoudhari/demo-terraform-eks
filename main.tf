@@ -5,10 +5,12 @@ provider "kubernetes" {
 }
 
 provider "aws" {
-    region = var.region    
-}
+    region = var.aws_region
+    shared_credentials_files = ["/home/dev/.aws/credentials"]
+    profile = "admin"
 
-data "aws_availability_zones" "available" {}
+ }  
+
 
 locals {
     cluster_name = "demo-eks-cluster"

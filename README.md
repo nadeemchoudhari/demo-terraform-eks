@@ -2,9 +2,9 @@
 
 # TERROM CODE TO PROVISION AWS EKS CLUSTER AND EC2 INSTANCE FOR JENKINS 
 
-This code will deploy EKS cluster with two node groups node-group-1 and node-group-2 having one ec2 instance each(t2 micro). It will use s3 backend for tfstate files. 
+This code will deploy EKS cluster with one node groups node-group-1 having one ec2 instance (t2 micro). It will use s3 backend for tfstate files. 
 
-It will also create an ec2 instance in differet VPC having installed  jenkins ( configured for building and pushing docker image for crp2-challenge-app adamgolang/hello-world ). It will install jenkins and docker on the ec2 instance.
+It will also create an ec2 instance in differet VPC having installed jenkins ( configured for building and pushing docker image for crp2-challenge-app adamgolang/hello-world ). It will install jenkins and docker on the ec2 instance.
 
 
 

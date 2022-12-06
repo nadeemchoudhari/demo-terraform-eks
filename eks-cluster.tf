@@ -11,15 +11,15 @@ module "eks" {
     vpc_id = module.vpc.vpc_id
     subnet_ids = module.vpc.private_subnets
 
+
     eks_managed_node_groups = {
         one = {
             name = "node-group-1"
 
-            instance_types = ["t2.micro"]
-            ami_id = "ami-074dc0a6f6c764218"
-            min_size     = 1
-            desired_size = 2
-            
+           instance_type = "t2.micro"
+           max_capacity  = 5
+           desired_capacity = 3
+           min_capacity  = 3
         }
 
     }

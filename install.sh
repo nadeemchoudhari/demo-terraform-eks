@@ -33,3 +33,6 @@ cd ~/demo-argocd-helm
 git checkout master
 kubectl create namespace argocd
 kubectl -n argocd apply -f ~/demo-argocd-helm/install.yaml
+kubectl -n argocd port-forward svc/argocd-server 8000:443
+kubectl label namespace interview istio-injection=enabled
+

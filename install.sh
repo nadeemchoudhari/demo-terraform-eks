@@ -18,9 +18,6 @@ sudo usermod -a -G docker ec2-user
 sudo usermod -a -G docker jenkins
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
-export AWS_ACCESS_KEY_ID="AKIASME2YHOVBYQIMLXY"
-export AWS_SECRET_ACCESS_KEY="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"
-export AWS_DEFAULT_REGION="ap-south-1"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install

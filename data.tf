@@ -20,3 +20,7 @@ data "aws_availability_zones" "available" {}
 data "aws_eks_cluster_auth" "mycluster" {
   name = module.eks.cluster_id
 }
+
+data "aws_iam_role" "aws-eks-role" {
+  name = "aws-eks"
+}

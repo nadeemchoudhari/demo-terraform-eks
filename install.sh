@@ -6,8 +6,8 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 #sudo yum upgrade
 sudo amazon-linux-extras install java-openjdk11 -y
 sudo yum install jenkins -y
-sudo systemctl enable jenkins
-sudo systemctl start jenkins
+#sudo systemctl enable jenkins
+#sudo systemctl start jenkins
 sudo yum search docker
 sudo yum info docker
 sudo yum install docker -y
@@ -24,12 +24,8 @@ sudo ./aws/install
 curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.7/2022-10-31/bin/linux/amd64/kubectl
 chmod +x kubectl
 sudo mv kubectl /usr/bin/
-aws eks update-kubeconfig --region ap-south-1 --name demo-eks-cluster
 git clone https://github.com/nadeemchoudhari/demo-argocd-helm.git  ~/demo-argocd-helm
 cd ~/demo-argocd-helm
 git checkout master
-kubectl create namespace argocd
-kubectl -n argocd apply -f ~/demo-argocd-helm/install.yaml
-kubectl -n argocd port-forward svc/argocd-server 8000:443
-kubectl label namespace interview istio-injection=enabled
+
 

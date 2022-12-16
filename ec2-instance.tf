@@ -1,7 +1,10 @@
 
 
+
 resource "aws_instance" "myjenkins" {
   ami = data.aws_ami.amzlinux2.id
+
+  iam_instance_profile = aws_iam_instance_profile.aws-eks-profile.name
   depends_on = [ module.eks.cluster_endpoint ]
   instance_type = "t2.micro"
   key_name = var.ec2keypair
@@ -32,5 +35,7 @@ resource "aws_instance" "myjenkins" {
       timeout     = "4m"
    }
 }
+
+
 
 
